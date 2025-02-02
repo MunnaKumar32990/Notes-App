@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: notes-app-frontend
+    env: node
+    plan: free
+    buildCommand: cd Frontend/notes-app && npm install && npm run build
+    startCommand: cd Frontend/notes-app && npm run render-start
+    envVars:
+      - key: NODE_ENV
+        value: production
+  - type: web
+    name: notes-app-backend
+    env: node
+    plan: free
+    buildCommand: cd Backend && npm install
+    startCommand: cd Backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: connectionString
+        value: mongodb+srv://munnakushw7:xnWQpOT0jimX72qe@notesapp.ier5n.mongodb.net/?retryWrites=true&w=majority&appName=notesapp
+      - key: ACCESS_TOKEN_SECRET
+        value: 042d283ae920632de3aae4d12b1dd7720c3d06bb2206f53cd48d7f38557898cf
