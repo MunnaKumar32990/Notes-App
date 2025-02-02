@@ -8,12 +8,12 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "both": "concurrently \"npm run dev\" \"npm --prefix ../Backend run start\""
+    "both": "concurrently \"npm run dev --prefix .\" \"npm run start --prefix Backend\""
+
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.2",
     "axios": "^1.7.9",
-    "concurrently": "^9.1.2",
     "moment": "^2.30.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -29,6 +29,7 @@
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
     "eslint": "^9.17.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
