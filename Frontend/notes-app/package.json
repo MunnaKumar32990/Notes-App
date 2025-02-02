@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "both": "concurrently \"npm run dev --prefix .\" \"npm run start --prefix Backend\"",
+    "both": "concurrently \"npm run dev --prefix .\" \"npm run start --prefix ../Backend\"",
     "start": "npm install && concurrently \"npm run dev --prefix .\" \"npm run start --prefix ../Backend\""
   },
   "dependencies": {
