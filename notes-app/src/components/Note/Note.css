@@ -1,0 +1,283 @@
+.note-card {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.25rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 220px;
+  border-top: 3px solid transparent;
+}
+
+.note-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.note-card.pinned {
+  border-top-color: #3b82f6;
+  background-color: #f8faff;
+}
+
+.note-card.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px;
+  height: 80vh;
+  z-index: 100;
+  overflow-y: auto;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.note-actions {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.note-card:hover .note-actions,
+.note-card.expanded .note-actions {
+  opacity: 1;
+}
+
+.pin-button,
+.delete-button,
+.edit-button,
+.save-button,
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  font-size: 1.1rem;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pin-button:hover,
+.edit-button:hover {
+  color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.save-button:hover {
+  color: #10b981;
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.delete-button:hover {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.close-button:hover {
+  color: #6b7280;
+  background-color: rgba(107, 114, 128, 0.1);
+}
+
+.pin-button.pinned {
+  color: #3b82f6;
+}
+
+.delete-button.confirming {
+  color: #ef4444;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.note-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #334155;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  word-break: break-word;
+  padding-right: 100px;
+}
+
+.note-title-input {
+  font-size: 1.25rem;
+  font-weight: 600;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #3b82f6;
+  padding: 0.5rem 0;
+  outline: none;
+  background: transparent;
+  color: #334155;
+  margin-bottom: 1rem;
+}
+
+.note-content {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.note-preview {
+  color: #4b5563;
+  line-height: 1.5;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  font-size: 0.95rem;
+  max-height: 125px;
+}
+
+.note-card.expanded .note-preview {
+  -webkit-line-clamp: initial;
+  max-height: none;
+}
+
+.note-editor {
+  height: 200px;
+}
+
+.note-card.expanded .note-editor {
+  height: 60vh;
+}
+
+.ql-editor {
+  min-height: 150px;
+}
+
+.note-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  gap: 0.5rem;
+}
+
+.note-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: #f1f5f9;
+  color: #334155;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.remove-tag {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  margin-left: 4px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-tag:hover {
+  color: #ef4444;
+}
+
+.tag-input-container {
+  display: flex;
+  align-items: center;
+  background-color: #f1f5f9;
+  border-radius: 20px;
+  padding: 0 10px;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.tag-icon {
+  color: #64748b;
+  margin-right: 6px;
+}
+
+.tag-input {
+  background: transparent;
+  border: none;
+  padding: 6px 0;
+  outline: none;
+  font-size: 0.9rem;
+  color: #334155;
+  flex: 1;
+}
+
+.add-tag-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3b82f6;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.note-date {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-left: auto;
+}
+
+/* Quill Editor Customization */
+.ql-toolbar.ql-snow {
+  border: 1px solid #e5e7eb;
+  border-radius: 4px 4px 0 0;
+}
+
+.ql-container.ql-snow {
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  height: 150px;
+}
+
+.ql-editor {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.ql-editor.ql-empty::before {
+  color: #9ca3af;
+  font-style: normal;
+} 

@@ -1,0 +1,131 @@
+.signup-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb;
+  padding: 2rem;
+}
+
+.signup-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.signup-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.signup-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.signup-header p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  color: #9ca3af;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #1f2937;
+  transition: all 0.2s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.signup-button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 1rem;
+}
+
+.signup-button:hover {
+  background-color: #2563eb;
+}
+
+.signup-button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.signup-footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.login-link {
+  color: #3b82f6;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.login-link:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .signup-card {
+    padding: 2rem;
+  }
+
+  .signup-header h1 {
+    font-size: 1.75rem;
+  }
+} 
